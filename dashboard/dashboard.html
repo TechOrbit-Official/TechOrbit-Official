@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم TechOrbit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- الشريط الجانبي -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/images/logo.png" alt="TechOrbit">
+                <h2>TechOrbit</h2>
+                <p>لوحة التحكم</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="#projects">
+                    <i class="fa-solid fa-folder"></i>
+                    <span>المشاريع</span>
+                </a>
+                <a href="#ratings">
+                    <i class="fa-solid fa-star"></i>
+                    <span>التقييمات</span>
+                </a>
+                <a href="#settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>الإعدادات</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="../index.html" target="_blank">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>عرض الموقع</span>
+                </a>
+            </div>
+        </aside>
+        
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>مرحباً بك في لوحة التحكم</h1>
+                <div class="header-actions">
+                    <button id="refresh-data" class="btn">
+                        <i class="fa-solid fa-rotate"></i>
+                        تحديث
+                    </button>
+                </div>
+            </header>
+            
+            <!-- بطاقات الإحصائيات -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <i class="fa-solid fa-folder"></i>
+                    <div>
+                        <h3 id="total-projects">0</h3>
+                        <p>إجمالي المشاريع</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-star"></i>
+                    <div>
+                        <h3 id="total-ratings">0</h3>
+                        <p>إجمالي التقييمات</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-code"></i>
+                    <div>
+                        <h3 id="total-web">0</h3>
+                        <p>مشاريع ويب</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-mobile"></i>
+                    <div>
+                        <h3 id="total-mobile">0</h3>
+                        <p>تطبيقات موبايل</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم إدارة المشاريع -->
+            <section class="content-section" id="projects-section">
+                <div class="section-header">
+                    <h2>إدارة المشاريع</h2>
+                    <button id="add-project" class="btn primary">
+                        <i class="fa-solid fa-plus"></i>
+                        إضافة مشروع
+                    </button>
+                </div>
+                
+                <div class="projects-table-container">
+                    <table class="projects-table">
+                        <thead>
+                            <tr>
+                                <th>الصورة</th>
+                                <th>العنوان</th>
+                                <th>التصنيف</th>
+                                <th>مميز</th>
+                                <th>التحكم</th>
+                            </tr>
+                        </thead>
+                        <tbody id="projects-table-body">
+                            <!-- سيتم إضافة المشاريع هنا -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- قسم التقييمات -->
+            <section class="content-section" id="ratings-section">
+                <div class="section-header">
+                    <h2>التقييمات الأخيرة</h2>
+                </div>
+                
+                <div class="ratings-list" id="dashboard-ratings">
+                    <!-- سيتم إضافة التقييمات هنا -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- نافذة إضافة/تعديل مشروع -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>إضافة مشروع جديد</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="project-form">
+                <div class="form-group">
+                    <label>عنوان المشروع</label>
+                    <input type="text" id="project-title" required>
+                </div>
+                <div class="form-group">
+                    <label>وصف المشروع</label>
+                    <textarea id="project-description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>رابط الصورة</label>
+                    <input type="url" id="project-image">
+                </div>
+                <div class="form-group">
+                    <label>رابط GitHub</label>
+                    <input type="url" id="project-github" required>
+                </div>
+                <div class="form-group">
+                    <label>رابط المعاينة</label>
+                    <input type="url" id="project-live">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>التصنيف</label>
+                        <select id="project-category">
+                            <option value="web">تطبيق ويب</option>
+                            <option value="mobile">تطبيق موبايل</option>
+                            <option value="design">تصميم</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>التقنيات المستخدمة</label>
+                        <input type="text" id="project-tech" placeholder="مفصولة بفواصل">
+                    </div>
+                </div>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" id="project-featured">
+                        مشروع مميز
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">حفظ</button>
+                    <button type="button" class="btn secondary close-modal">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="dashboard.js"></script>
+</body>
+</html>
