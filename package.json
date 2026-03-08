@@ -1,0 +1,22 @@
+{
+  "name": "techorbit-website",
+  "version": "1.0.0",
+  "description": "TechOrbit Team Portfolio Website",
+  "webapp": {
+    "name": "TechOrbit Web",
+    "version": "1.0.0",
+    "copyright": "© By TechOrbit-Team"
+  },
+  "app": {
+    "name": "TechOrbit App",
+    "version": "1.0.0",
+    "copyright": "© By TechOrbit-Team"
+  },
+  "scripts": {
+    "start": "live-server --port=3000",
+    "build": "echo 'Building project...'"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

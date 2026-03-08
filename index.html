@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechOrbit - FullStackDev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- شريط التحميل -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="TechOrbit Logo">
+                <span>TechOrbit</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home" class="active">الرئيسية</a>
+                <a href="#projects">المشاريع</a>
+                <a href="assets/Sub-sites/about.html">من نحن</a>
+                <a href="assets/Sub-sites/services.html">خدماتنا</a>
+                <a href="assets/Sub-sites/contact.html">اتصل بنا</a>
+            </div>
+
+            <div class="nav-controls">
+                <button id="lang-toggle" class="lang-btn">
+                    <span>English</span>
+                    <i class="fa-solid fa-language"></i>
+                </button>
+                <a href="https://github.com/TechOrbit-Team" target="_blank" class="github-link">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <button class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch-text">TechOrbit<span>.</span></h1>
+            <p class="typing-text"></p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">مشاريعنا</a>
+                <a href="assets/Sub-sites/contact.html" class="btn secondary">تواصل معنا</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="50">0</span>
+                <span class="stat-label">+ مشروع</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="30">0</span>
+                <span class="stat-label">+ عميل</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="5">0</span>
+                <span class="stat-label">+ سنوات</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects" class="projects">
+        <div class="section-header">
+            <h2>مشاريعنا <span class="highlight">المميزة</span></h2>
+            <p>نفخر بتقديم مجموعة من أفضل مشاريعنا على GitHub</p>
+        </div>
+        
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="web">تطبيقات ويب</button>
+            <button class="filter-btn" data-filter="mobile">تطبيقات موبايل</button>
+            <button class="filter-btn" data-filter="design">تصاميم</button>
+        </div>
+
+        <div class="projects-grid" id="projects-container">
+            <!-- المشاريع ستتحمل ديناميكياً من JSONBin -->
+        </div>
+    </section>
+
+    <!-- قسم التقييمات -->
+    <section class="ratings">
+        <div class="section-header">
+            <h2>تقييمات <span class="highlight">العملاء</span></h2>
+        </div>
+        
+        <div class="ratings-container">
+            <div class="rating-form">
+                <h3>أضف تقييمك</h3>
+                <div class="stars-input">
+                    <i class="fa-regular fa-star" data-rating="1"></i>
+                    <i class="fa-regular fa-star" data-rating="2"></i>
+                    <i class="fa-regular fa-star" data-rating="3"></i>
+                    <i class="fa-regular fa-star" data-rating="4"></i>
+                    <i class="fa-regular fa-star" data-rating="5"></i>
+                </div>
+                <textarea id="rating-message" placeholder="اكتب تقييمك هنا..." rows="4"></textarea>
+                <input type="text" id="rating-name" placeholder="اسمك">
+                <button id="submit-rating" class="btn primary">إرسال التقييم</button>
+            </div>
+            
+            <div class="ratings-list" id="ratings-container">
+                <!-- التقييمات ستتحمل ديناميكياً -->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم GitHub -->
+    <section class="github-section">
+        <div class="github-content">
+            <h2>تابعنا على <i class="fa-brands fa-github"></i> GitHub</h2>
+            <p>اطلع على أحدث مشاريعنا وأكوادنا المفتوحة المصدر</p>
+            <a href="https://github.com/TechOrbit-Team" target="_blank" class="btn github-btn">
+                <i class="fa-brands fa-github"></i>
+                زيارة المنظمة
+            </a>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechOrbit</h3>
+                <p>فريق متخصص في تصميم وتطوير المواقع والتطبيقات</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>المواقع الفرعية</h4>
+                <ul>
+                    <li><a href="assets/Sub-sites/about.html">من نحن</a></li>
+                    <li><a href="assets/Sub-sites/services.html">خدماتنا</a></li>
+                    <li><a href="assets/Sub-sites/contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>معلومات</h4>
+                <p id="copyright"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>
