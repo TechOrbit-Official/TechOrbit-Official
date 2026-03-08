@@ -1,6 +1,6 @@
-// إعدادات JSONBin
-const JSONBIN_API_KEY = 'هنا_ضع_API_Key';
-const JSONBIN_BIN_ID = 'هنا_ضع_Bin_ID';
+
+const JSONBIN_API_KEY = '$2a$10$f9YalTG10QTmZbvhEk4lYOr5qH8XCarbV/ttzf7c5VS1eKuigcC16';
+const JSONBIN_BIN_ID = '69ade1bc43b1c97be9c227ac';
 
 let currentData = {
     projects: [],
